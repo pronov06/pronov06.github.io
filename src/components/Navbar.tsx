@@ -2,24 +2,33 @@ import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HoverLinks from "./HoverLinks";
 import { gsap } from "gsap";
-import { ScrollSmoother } from "gsap-trial/ScrollSmoother";
 import "./styles/Navbar.css";
 
-gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
-export let smoother: ScrollSmoother;
+gsap.registerPlugin(ScrollTrigger);
+
+export const smoother = {
+  paused: (isPaused: boolean) => {
+    if (isPaused) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    }
+  },
+  scrollTo: (section: string, smooth: boolean) => {
+    const targetElement = document.querySelector(section);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
+    }
+  },
+  scrollTop: (top: number) => {
+    window.scrollTo({ top: top, behavior: "auto" });
+  }
+};
 
 const Navbar = () => {
   useEffect(() => {
-    smoother = ScrollSmoother.create({
-      wrapper: "#smooth-wrapper",
-      content: "#smooth-content",
-      smooth: 1.7,
-      speed: 1.7,
-      effects: true,
-      autoResize: true,
-      ignoreMobileResize: true,
-    });
-
     smoother.scrollTop(0);
     smoother.paused(true);
 
@@ -32,12 +41,9 @@ const Navbar = () => {
           let section = elem.getAttribute("data-href");
           if (!section) return; // external links (e.g. Resume) open normally
           e.preventDefault();
-          smoother.scrollTo(section, true, "top top");
+          smoother.scrollTo(section, true);
         }
       });
-    });
-    window.addEventListener("resize", () => {
-      ScrollSmoother.refresh(true);
     });
   }, []);
   return (
