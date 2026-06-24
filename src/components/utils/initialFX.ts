@@ -4,6 +4,8 @@ import { smoother } from "../Navbar";
 
 export function initialFX() {
   document.body.style.overflowY = "auto";
+  document.body.style.overflowX = "hidden";
+  document.documentElement.style.overflowX = "hidden";
   smoother.paused(false);
   document.getElementsByTagName("main")[0].classList.add("main-active");
   gsap.to("body", {

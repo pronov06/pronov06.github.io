@@ -37,7 +37,7 @@
   height: 530px;
   margin-left: 200px;
   position: relative;
-  display: none;
+  display: flex; /* visible by default; hidden on desktop via media query below */
 }
 .what-content {
   width: 450px;
@@ -407,5 +407,11 @@
   .what-box h2 {
     font-size: 7rem;
     line-height: 6.8rem;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  /* On desktop, what-box-in starts hidden and is revealed by the GSAP scroll animation */
+  .what-box-in {
+    display: none;
   }
 }
