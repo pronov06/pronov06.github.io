@@ -87,9 +87,9 @@
     var(--accentColor) 50%,
     transparent 95%
   );
-  max-height: 100%;
-  clip-path: inset(0 0 100% 0);
-  will-change: clip-path;
+  max-height: 10%;
+  overflow: visible;
+  will-change: max-height;
 }
 .career-dot {
   position: absolute;

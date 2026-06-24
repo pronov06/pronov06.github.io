@@ -145,8 +145,8 @@ export function setAllTimeline() {
   careerTimeline
     .fromTo(
       ".career-timeline",
-      { clipPath: "inset(0 0 90% 0)" },
-      { clipPath: "inset(0 0 0% 0)", duration: 0.5 },
+      { maxHeight: "10%" },
+      { maxHeight: "100%", duration: 0.5 },
       0
     )
 

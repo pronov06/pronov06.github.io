@@ -110,6 +110,14 @@ body {
   margin-bottom: -100px;
 }
 
+/* Fade the bottom of the 3D techstack canvas so the floating balls dissolve
+   into the background instead of getting hard-clipped at the canvas edge —
+   this blends the techstack and contact sections into one seamless surface. */
+.techstack canvas {
+  -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+}
+
 .techstack h2 {
   font-size: 80px;
   text-align: center;
