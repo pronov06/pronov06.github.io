@@ -190,7 +190,7 @@ Final-year B.Tech CSE (Big Data Analytics) @ SRM Institute of Science and Techno
 
 ## 🙏 Acknowledgements
 
-- 3D portfolio template originally created by **[Moncy Yohannan](https://github.com/MoncyDev/Portfolio-Website)** — adapted here with my own content, projects, copy, and tuning. All original 3D avatar assets belong to the original author and are **not** redistributed; my live site uses my own content.
+- 3D portfolio template originally created by **[Moncy Yohanan](https://github.com/MoncyDev/Portfolio-Website)** — adapted here with my own content, projects, copy, and tuning. All original 3D avatar assets belong to the original author and are **not** redistributed; my live site uses my own content.
 - [GSAP](https://gsap.com/) · [Three.js](https://threejs.org/) · [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) · [Rapier](https://rapier.rs/)
 
 ---
