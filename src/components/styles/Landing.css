@@ -173,13 +173,21 @@
   letter-spacing: 2px;
 }
 
-.landing-intro h1 {
+.landing-name {
+  display: block;
+  line-height: 1;
+}
+
+.landing-name-line1,
+.landing-name-line2 {
   margin: 0;
   letter-spacing: 2px;
   font-size: 28px;
-  line-height: 28px;
+  line-height: 32px;
   font-weight: 500;
   font-family: "ClashDisplay", sans-serif;
+  display: block;
+  overflow: hidden;
 }
 
 /* .landing-intro h1 span {
@@ -261,9 +269,10 @@ h2.landing-info-h2 {
   .landing-intro h2 {
     font-size: 18px;
   }
-  .landing-intro h1 {
+  .landing-name-line1,
+  .landing-name-line2 {
     font-size: 30px;
-    line-height: 30px;
+    line-height: 32px;
   }
   .landing-info h2 {
     font-size: 35px;
@@ -280,9 +289,10 @@ h2.landing-info-h2 {
   .landing-intro h2 {
     font-size: 25px;
   }
-  .landing-intro h1 {
+  .landing-name-line1,
+  .landing-name-line2 {
     font-size: 40px;
-    line-height: 35px;
+    line-height: 38px;
   }
   .landing-info h3 {
     font-size: 25px;
@@ -309,10 +319,16 @@ h2.landing-info-h2 {
   .landing-intro {
     top: 50%;
     left: auto;
-    right: 57%;
+    right: 63%;
     transform: translate(0%, -50%);
+    max-width: 34%;
   }
-
+  .landing-name-line1,
+  .landing-name-line2 {
+    font-size: 36px;
+    line-height: 40px;
+    white-space: nowrap;
+  }
   .landing-info {
     bottom: auto;
     top: 51%;
@@ -320,17 +336,23 @@ h2.landing-info-h2 {
     text-align: left;
     transform: translate(0%, -50%);
     right: auto;
-    left: 57%;
+    left: 63%;
+    max-width: 34%;
   }
 }
 @media screen and (min-width: 1200px) {
   .landing-intro {
     top: 50%;
     left: auto;
-    right: 60%;
+    right: 65%;
     transform: translate(0%, -50%);
+    max-width: 32%;
   }
-
+  .landing-name-line1,
+  .landing-name-line2 {
+    font-size: 42px;
+    line-height: 46px;
+  }
   .landing-info {
     bottom: auto;
     top: 51%;
@@ -338,16 +360,26 @@ h2.landing-info-h2 {
     text-align: left;
     transform: translate(0%, -50%);
     right: auto;
-    left: 60%;
+    left: 65%;
+    max-width: 32%;
   }
 }
 @media screen and (min-width: 1600px) {
   .landing-intro h2 {
     font-size: 35px;
   }
-  .landing-intro h1 {
+  .landing-name-line1,
+  .landing-name-line2 {
     font-size: 60px;
-    line-height: 55px;
+    line-height: 64px;
+  }
+  .landing-intro {
+    right: 68%;
+    max-width: 30%;
+  }
+  .landing-info {
+    left: 68%;
+    max-width: 30%;
   }
   .landing-info h3 {
     font-size: 35px;
