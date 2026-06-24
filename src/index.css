@@ -38,9 +38,7 @@ h5,
 h6 {
   font-family: "ClashDisplay", sans-serif;
 }
-body {
-  overflow: hidden;
-}
+
 a {
   color: inherit;
   text-decoration: inherit;
