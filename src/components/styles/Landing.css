@@ -175,7 +175,6 @@
 
 .landing-name {
   display: block;
-  line-height: 1;
 }
 
 .landing-name-line1,
@@ -183,11 +182,11 @@
   margin: 0;
   letter-spacing: 2px;
   font-size: 28px;
-  line-height: 32px;
+  line-height: 34px;
   font-weight: 500;
   font-family: "ClashDisplay", sans-serif;
   display: block;
-  overflow: hidden;
+  white-space: nowrap;
 }
 
 /* .landing-intro h1 span {
@@ -316,52 +315,42 @@ h2.landing-info-h2 {
   .character-model::before {
     display: none;
   }
+  /* Anchor left text to the LEFT edge of the container */
   .landing-intro {
     top: 50%;
-    left: auto;
-    right: 63%;
-    transform: translate(0%, -50%);
-    max-width: 34%;
+    left: 0;
+    right: auto;
+    transform: translateY(-50%);
+    max-width: 300px;
   }
   .landing-name-line1,
   .landing-name-line2 {
-    font-size: 36px;
+    font-size: 34px;
     line-height: 40px;
-    white-space: nowrap;
   }
+  /* Anchor right text to the RIGHT edge of the container */
   .landing-info {
     bottom: auto;
     top: 51%;
     z-index: inherit;
     text-align: left;
-    transform: translate(0%, -50%);
-    right: auto;
-    left: 63%;
-    max-width: 34%;
+    transform: translateY(-50%);
+    right: 0;
+    left: auto;
+    max-width: 300px;
   }
 }
 @media screen and (min-width: 1200px) {
   .landing-intro {
-    top: 50%;
-    left: auto;
-    right: 65%;
-    transform: translate(0%, -50%);
-    max-width: 32%;
+    max-width: 340px;
   }
   .landing-name-line1,
   .landing-name-line2 {
-    font-size: 42px;
+    font-size: 40px;
     line-height: 46px;
   }
   .landing-info {
-    bottom: auto;
-    top: 51%;
-    z-index: inherit;
-    text-align: left;
-    transform: translate(0%, -50%);
-    right: auto;
-    left: 65%;
-    max-width: 32%;
+    max-width: 340px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -370,16 +359,14 @@ h2.landing-info-h2 {
   }
   .landing-name-line1,
   .landing-name-line2 {
-    font-size: 60px;
-    line-height: 64px;
+    font-size: 55px;
+    line-height: 60px;
   }
   .landing-intro {
-    right: 68%;
-    max-width: 30%;
+    max-width: 420px;
   }
   .landing-info {
-    left: 68%;
-    max-width: 30%;
+    max-width: 420px;
   }
   .landing-info h3 {
     font-size: 35px;

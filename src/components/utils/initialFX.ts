@@ -15,7 +15,7 @@ export function initialFX() {
   });
 
   var landingText = new SplitTextHelper(
-    [".landing-info h3", ".landing-intro h2", ".landing-name-line1", ".landing-name-line2"],
+    [".landing-info h3", ".landing-intro h2"],
     {
       type: "chars,lines",
       linesClass: "split-line",
@@ -32,6 +32,22 @@ export function initialFX() {
       y: 0,
       stagger: 0.025,
       delay: 0.3,
+    }
+  );
+
+  // Animate the name lines as whole elements — do NOT char-split them
+  // because SplitTextHelper flattens the two h1 blocks into one visual line
+  gsap.fromTo(
+    [".landing-name-line1", ".landing-name-line2"],
+    { opacity: 0, y: 50, filter: "blur(6px)" },
+    {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      duration: 1.2,
+      ease: "power3.inOut",
+      stagger: 0.12,
+      delay: 0.35,
     }
   );
 
