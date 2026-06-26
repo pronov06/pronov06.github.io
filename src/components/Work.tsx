@@ -86,7 +86,11 @@ const Work = () => {
         scrub: 0.5,
         pinSpacing: true,
         pin: true,
-        pinType: ScrollTrigger.isTouch ? "fixed" : "transform",
+        // Native window scrolling (ScrollSmoother was removed). For the window
+        // scroller with no transformed ancestor, position:fixed pinning tracks
+        // the scroll cleanly — transform pinning here causes the section to
+        // snag / feel "stuck" mid-scroll.
+        pinType: "fixed",
         invalidateOnRefresh: true,
         id: "work",
       },

@@ -1,5 +1,6 @@
 import { SplitTextHelper } from "./SplitTextHelper";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { smoother } from "../Navbar";
 
 export function initialFX() {
@@ -96,6 +97,19 @@ export function initialFX() {
 
   LoopText(landingText2, landingText3);
   LoopText(landingText4, landingText5);
+
+  // The page only becomes scrollable here (after the loader), and the 3D model,
+  // images, fonts and SplitText reflow all settle around this moment at varying
+  // times. Recalculate every ScrollTrigger's start/end against the final layout
+  // so pinned sections (Work) don't snag mid-scroll. The staggered + font-ready
+  // refreshes catch late layout shifts that otherwise made scrolling feel
+  // "stuck" only sometimes.
+  ScrollTrigger.refresh();
+  if (typeof document !== "undefined" && (document as any).fonts?.ready) {
+    (document as any).fonts.ready.then(() => ScrollTrigger.refresh());
+  }
+  setTimeout(() => ScrollTrigger.refresh(), 400);
+  setTimeout(() => ScrollTrigger.refresh(), 1200);
 }
 
 function LoopText(Text1: SplitTextHelper, Text2: SplitTextHelper) {
